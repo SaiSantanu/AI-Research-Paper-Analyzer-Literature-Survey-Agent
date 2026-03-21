@@ -23,7 +23,7 @@ An autonomous AI agent designed to streamline the academic research process. Thi
     Clone the repository:
 
     Bash
-    git clone https://github.com/your-username/AI-Research-Paper-Analyzer-Literature-Survey-Agent.git
+    git clone https://github.com/SaiSantanu/AI-Research-Paper-Analyzer-Literature-Survey-Agent.git
     cd AI-Research-Paper-Analyzer-Literature-Survey-Agent
 
 # 🤝 Contributing
