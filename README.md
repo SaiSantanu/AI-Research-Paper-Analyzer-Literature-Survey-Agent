@@ -34,3 +34,10 @@ Today's contibution :
 Backend Integration: Initiated the setup for the Python-based "Bridge" using Uvicorn and FastAPI.
 Environment Troubleshooting: Diagnosed and documented fixes for Python PATH and pip alias conflicts on Windows.
 API Research: Researched and selected high-authority Research APIs (OpenAlex and Semantic Scholar) to retrieve verified, high-rank papers for automated literature reviews.
+
+Name:Dilshad Alam
+Date: 25/03
+Today's contibution :
+Added Topic Clarifier Agent
+Introduced a new clarifier_agent() that runs before the main pipeline. It detects when a user enters a broad or vague topic — such as "cancer", "machine learning", or "climate change" — and automatically asks a short series of targeted follow-up questions to narrow the focus.
+For example, entering cancer triggers questions like: which cancer type, which research aspect (detection, treatment, genomics), and preferred methodology. The answers are combined into a refined query such as cancer lung early detection deep learning — which the pipeline then uses for a far more targeted arXiv search.
