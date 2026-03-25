@@ -28,4 +28,9 @@ An autonomous AI agent designed to streamline the academic research process. Thi
 
 # 🤝 Contributing
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+Name:Abu Unaib
+Date: 25/03
+Today's contibution :
+Backend Integration: Initiated the setup for the Python-based "Bridge" using Uvicorn and FastAPI.
+Environment Troubleshooting: Diagnosed and documented fixes for Python PATH and pip alias conflicts on Windows.
+API Research: Researched and selected high-authority Research APIs (OpenAlex and Semantic Scholar) to retrieve verified, high-rank papers for automated literature reviews.
