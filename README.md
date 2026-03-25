@@ -28,6 +28,11 @@ An autonomous AI agent designed to streamline the academic research process. Thi
 
 # 🤝 Contributing
 
+Name:Anish Raj
+Date:24/03
+Today's Contribution :
+I implemented the paper processing pipeline that downloads research papers from arXiv and extracts the text using PyMuPDF so the system can analyze them.
+
 Name:Abu Unaib
 Date: 25/03
 Today's contibution :
