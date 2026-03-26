@@ -28,21 +28,120 @@ An autonomous AI agent designed to streamline the academic research process. Thi
 
 # 🤝 Contributing
 
-Name:Anish Raj
-Date:24/03
+## Name:Anish Raj
+### Date:24/03
 Today's Contribution :
 I implemented the paper processing pipeline that downloads research papers from arXiv and extracts the text using PyMuPDF so the system can analyze them.
 
-Name:Abu Unaib
-Date: 25/03
+## Name:Abu Unaib
+### Date: 25/03
 Today's contibution :
 Backend Integration: Initiated the setup for the Python-based "Bridge" using Uvicorn and FastAPI.
 Environment Troubleshooting: Diagnosed and documented fixes for Python PATH and pip alias conflicts on Windows.
 API Research: Researched and selected high-authority Research APIs (OpenAlex and Semantic Scholar) to retrieve verified, high-rank papers for automated literature reviews.
 
-Name:Dilshad Alam
-Date: 25/03
+## Name:Dilshad Alam
+### Date: 25/03
 Today's contibution :
 Added Topic Clarifier Agent
 Introduced a new clarifier_agent() that runs before the main pipeline. It detects when a user enters a broad or vague topic — such as "cancer", "machine learning", or "climate change" — and automatically asks a short series of targeted follow-up questions to narrow the focus.
 For example, entering cancer triggers questions like: which cancer type, which research aspect (detection, treatment, genomics), and preferred methodology. The answers are combined into a refined query such as cancer lung early detection deep learning — which the pipeline then uses for a far more targeted arXiv search.
+
+
+## Name:Sai Santanu Sahoo
+### Date: 25-26/03
+
+# 📊 System Workflow Comparison
+
+## 🔹 Previous Working Workflow (Stable)
+The original system followed a **linear ETL-style RAG pipeline**. Data moved in a single direction, making it highly predictable and easy to debug.
+
+```mermaid
+graph LR
+    A[User Input - React] --> B[Spring Boot API]
+    B --> C[FastAPI Bridge]
+    C --> D[Search Papers - arXiv]
+    D --> E[Download PDFs]
+    E --> F[Extract Text]
+    F --> G[Build Vector DB - ChromaDB]
+    G --> H[Generate Report]
+    H --> I[Return Response]
+
+    style A fill:#f9f,stroke:#333,stroke-width:2px
+    style I fill:#bbf,stroke:#333,stroke-width:2px
+
+``` 
+# ✅ Characteristics
+**Simple linear pipeline:** Easy to trace; if step G fails, you know step F provided bad data.
+**Functional RAG: Standard** "Retrieve and Generate" implementation.
+**Minimal error handling:** Stable end-to-end flow with low architectural overhead.
+
+# 🔹 Intended Upgraded Workflow (Agent-Based)
+The upgraded design introduces Autonomous Agents and a Recursive Feedback Loop. This allows the system to critique its own output and perform multi-step reasoning.
+```mermaid
+graph TD
+    A[User Input] --> B[Planner Agent]
+    B --> C[Searcher Agent]
+    C --> D[Reader Agent]
+    D --> E[Vector Store Builder]
+    E --> F[RAG Extraction]
+    F --> G[Synthesizer Agent]
+    G --> H[Reviewer Agent]
+    
+    H -- "Needs Revision" --> J[Reviser Agent]
+    J --> G
+    
+    H -- "Approved" --> K[Final Report]
+
+    style B fill:#dfd,stroke:#333
+    style H fill:#fdd,stroke:#333
+    style K fill:#dff,stroke:#333,stroke-width:4px
+```
+
+## ⚖️ Comparison
+
+| Aspect         | Previous System | Intended System         |
+| -------------- | --------------- | ----------------------- |
+| Architecture   | Linear pipeline | Multi-agent workflow    |
+| Complexity     | Low             | High                    |
+| Stability      | High            | Low (during transition) |
+| Scalability    | Limited         | High                    |
+| Error Handling | Minimal         | Advanced                |
+| Output Quality | Basic           | Structured & refined    |
+
+---
+
+## ❗ Why Upgrade Failed
+
+* Simultaneous multi-layer changes
+* Tight coupling between components
+* Pipeline ↔ bridge mismatch
+* No incremental testing
+
+---
+
+## 🎯 Final Insight
+
+The previous system was **stable but simple**, while the intended system aimed to be **powerful but required a full redesign**.
+Partial upgrades caused system instability.
+
+---
+
+## 📌 Recommendation
+
+* Upgrade one layer at a time
+* Maintain strict API contracts
+* Test modules independently
+* Use Git checkpoints
+
+---
+
+
+
+
+
+
+
+
+
+
