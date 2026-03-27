@@ -136,8 +136,8 @@ Partial upgrades caused system instability.
 
 ---
 
-## Debang Debadarshi Behera
- ## 26-17 / 03 / 2026
+## Debang Debadarshi Behera & Harshit Singh
+ ## 26-27 / 03 / 2026
 
  # 📄 Paper Fetcher API — Project Log
 
