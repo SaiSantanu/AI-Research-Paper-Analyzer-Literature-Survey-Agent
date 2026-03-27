@@ -136,6 +136,70 @@ Partial upgrades caused system instability.
 
 ---
 
+## Debang Debadarshi Behera
+ ## 26-17 / 03 / 2026
+
+ # 📄 Paper Fetcher API — Project Log
+
+> **Status: ❌ DISCONTINUED**
+> This project was halted due to legal and technical blockers encountered during development.
+
+---
+
+## 🧭 Project Goal
+
+The original intention was to build a personal API that:
+- Accepts a **paper name** and/or **DOI** as input
+- Queries **Sci-Hub** (via `sci-hub.ren` and its mirror domains)
+- Returns the **PDF document** of the requested research paper
+
+---
+
+## 🛠️ Approach Attempted
+
+### Phase 1 — Research & Planning ✅
+- Identified Sci-Hub as the target source
+- Mapped out the input/output structure: `{ title, doi }` → `PDF file`
+- Planned a REST API wrapper around Sci-Hub's web interface
+
+### Phase 2 — Development Started ✅
+- Attempted to reverse-engineer Sci-Hub's DOI resolution flow
+- Explored HTTP request patterns to fetch PDF links programmatically
+- Began scaffolding the API server
+
+### Phase 3 — Blockers Encountered ❌ **(Project Halted Here)**
+
+This is where the project **failed and could not continue**.
+
+---
+
+## 🚧 Why It Failed
+
+### 1. ⚖️ Legal Barrier — Copyright Infringement
+Sci-Hub distributes copyrighted academic papers **without authorization** from publishers or copyright holders. Building an automated API on top of it would constitute **systematic, large-scale copyright infringement**, which carries serious legal consequences including:
+- Civil liability under copyright law
+- Similar statutes in EU, India, and other jurisdictions
+
+Multiple courts worldwide (US District Court, Delhi High Court, French courts, German courts) have already issued rulings against Sci-Hub. Proceeding further was not legally viable.
+
+### 2. 🔒 Technical Barrier — No Official API
+Sci-Hub does **not** provide or endorse any public-facing API. Any programmatic access would rely on:
+- Scraping an unstable, frequently-changing web interface
+- Bypassing CAPTCHAs and bot-detection systems
+
+This makes a reliable integration technically infeasible for production use.
+
+### 3. 🌐 Domain Instability
+Sci-Hub operates on rotating mirror domains (e.g., `sci-hub.ren`, `sci-hub.se`, `sci-hub.st`). These domains are routinely:
+- Blocked by ISPs across many countries
+- Taken down without notice
+- Changed unpredictably
+
+Any hardcoded integration would break repeatedly and require constant maintenance.
+
+---
+
+
 
 
 
